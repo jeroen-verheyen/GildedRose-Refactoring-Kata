@@ -2,7 +2,7 @@ package com.gildedrose.item;
 
 import com.gildedrose.Item;
 
-public class DefaultItem implements ItemI {
+public class DefaultItem implements GildenRoseItem {
 
     protected final Item item;
 

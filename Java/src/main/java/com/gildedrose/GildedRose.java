@@ -15,7 +15,8 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        Arrays.stream(this.items).forEach(item -> new ItemFactory().getItem(item).update());
+        Arrays.stream(this.items)
+                .forEach(item -> new ItemFactory().getItem(item).update());
     }
 
 //    public void updateQuality() {
