@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import com.gildedrose.item.DefaultItem;
 import com.gildedrose.item.GildenRoseItem;
-import com.gildedrose.types.ItemCategoryType;
+import com.gildedrose.types.CategoryItemType;
 import com.gildedrose.types.ProductItemType;
 import org.apache.commons.lang3.StringUtils;
 
@@ -18,7 +18,7 @@ public class ItemFactory {
             return itemType.get().create(item);
         }
 
-        Optional<ItemCategoryType> categoryItemType = getCategoryItem(item);
+        Optional<CategoryItemType> categoryItemType = getCategoryItem(item);
         if (categoryItemType.isPresent()) {
             return categoryItemType.get().create(item);
         }
@@ -32,9 +32,9 @@ public class ItemFactory {
                 .findFirst();
     }
 
-    private Optional<ItemCategoryType> getCategoryItem(Item item) {
-        return Arrays.stream(ItemCategoryType.values())
-                .filter(itemCategoryType -> StringUtils.startsWith(item.name, itemCategoryType.getCategoryPrefix()))
+    private Optional<CategoryItemType> getCategoryItem(Item item) {
+        return Arrays.stream(CategoryItemType.values())
+                .filter(categoryItemType -> StringUtils.startsWith(item.name, categoryItemType.getCategoryPrefix()))
                 .findFirst();
     }
 }

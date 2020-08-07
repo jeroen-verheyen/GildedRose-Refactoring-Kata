@@ -7,7 +7,7 @@ import com.gildedrose.item.ConjuredItem;
 import com.gildedrose.item.GildenRoseItem;
 import com.gildedrose.item.SulfurasItem;
 
-public enum ItemCategoryType {
+public enum CategoryItemType {
     CONJURED_ITEM(GildenRoseConstants.CONJURED_PREFIX) {
         @Override
         public GildenRoseItem create(Item item) {
@@ -31,7 +31,7 @@ public enum ItemCategoryType {
 
     private String categoryPrefix;
 
-    ItemCategoryType(String categoryPrefix) {
+    CategoryItemType(String categoryPrefix) {
         this.categoryPrefix = categoryPrefix;
     }
 
